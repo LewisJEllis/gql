@@ -167,17 +167,17 @@ export function buildASTSchema( // eslint-disable-line complexity
   }
 
   // error for multi same name typeDef
-  Object.keys(nodeMapWithAllReferences).forEach((name) => {
-    if (nodeMapWithAllReferences[name].length > 1) {
-      errors.push(
-        newGQLError(
-          `Schema must contain unique named types but contains multiple types named "${name}".`,
-          nodeMapWithAllReferences[name].map((typeDefAST) => typeDefAST.name),
-          SEVERITY.error,
-        ),
-      );
-    }
-  });
+  // Object.keys(nodeMapWithAllReferences).forEach((name) => {
+  //   if (nodeMapWithAllReferences[name].length > 1) {
+  //     errors.push(
+  //       newGQLError(
+  //         `Schema must contain unique named types but contains multiple types named "${name}".`,
+  //         nodeMapWithAllReferences[name].map((typeDefAST) => typeDefAST.name),
+  //         SEVERITY.error,
+  //       ),
+  //     );
+  //   }
+  // });
 
   let queryTypeName = null;
   let mutationTypeName = null;
